@@ -29,8 +29,8 @@
 |------|----|-------|
 |body|text|
 |image|string|
-|user_id|referebce|null: false, foreign_key: true|
-|group_id|referebce|null: false, foreign_key: true|
+|user_id|reference|null: false, foreign_key: true|
+|group_id|reference|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :users
@@ -40,8 +40,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|referebce|null: false, foreign_key: true|
-|group_id|referebce|null: false, foreign_key: true|
+|user_id|reference|null: false, foreign_key: true|
+|group_id|reference|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :users
