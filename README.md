@@ -1,16 +1,5 @@
 # README
 
-## memberテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|user_id|referebce|null: false, foreign_key: true|
-|group_id|referebce|null: false, foreign_key: true|
-
-### Association
-- belongs_to :group
-- belongs_to :user
-
 ## usersテーブル
 
 |Column|Type|Options|
@@ -21,7 +10,6 @@
 ### Association
 - has_many :groups, through: members
 - has_many :messages
-- has_many :members
 
 
 ## groupテーブル
@@ -39,16 +27,16 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
+|body|text|
 |image|string|
 |user_id|referebce|null: false, foreign_key: true|
 |group_id|referebce|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :user
+- belongs_to :users
 - belongs_to :group
 
-## group_userstテーブル
+## group_usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
