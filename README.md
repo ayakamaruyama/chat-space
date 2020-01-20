@@ -16,8 +16,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|referebce|null: false, foreign_key: true|
-|group_id|referebce|null: false, foreign_key: true|
+|groups_name|string|null: false, unique: true|
 
 ### Association
 - has_many :groups_users
