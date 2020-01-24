@@ -12,7 +12,7 @@
     padding: 0px 20px;
     background-color: #253141;
    
-    .header__box{
+    &__box{
       display: flex;
       justify-content: space-between;
       height:20px ;
@@ -20,14 +20,14 @@
       width: 260px ;
       background-color: #333333;
       
-      .box__user-name{
+      &__user-name{
         display: inline-block;
           font-size: 16px;
           font-weight: bold;
           color: white ;
       }
     
-      .box__menu-list{
+      &__menu-list{
         display: inline-block;
         display: flex;
         justify-content: space-between;
@@ -50,13 +50,13 @@
     .group {
       box-sizing: border-box;
       padding: 20px 0 40px;
-      .group__name{
+      &__name{
           color: #ffffff;
-          font-size: 16px;
+          font-size: 15px;
       }
-      .group__message{
+      &__message{
         color: #ffffff;
-        font-size: 16px;
+        font-size: 11px;
         margin-top: 5px;       
       }
     }
