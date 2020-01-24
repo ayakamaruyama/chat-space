@@ -1,0 +1,20 @@
+.side-bar
+  .header
+    %div.header__box
+      %ul.box__user-name
+        neko
+      %ul.box__menu-list  
+        %li.menu-list__new-group 
+          = link_to '#' do
+            = icon('fa', 'edit',class: 'new-group ')
+        %li.menu-list__edit-group
+          = link_to '#' do
+            = icon('fa', 'cog',class: 'edit-group')
+
+  .groups
+    .group
+      .group__name
+        グループ名
+      .group__message
+        新着メッセージ
+   
