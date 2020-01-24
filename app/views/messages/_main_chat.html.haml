@@ -1,100 +1,45 @@
-.wrapper
-  -# = render 'side_bar'
-  
+.main-chat
+  .main-header
+    .main-header__left-header
+      .main-header__left-header__title
+        グループタイトル名
+      .main-header__left-header__member
+      %ul.left-header__members
+        %li.menber
+          メンバー名
+    .main-header__right-header  
+      .main-header__right-header__button
+        edit
+        
 
-  .main-chat
-    .main-header
-      .main-header__left-header
-        .main-header__left-header__title
-          グループタイトル名
-        .main-header__left-header__member
-        %ul.left-header__members
-          %li.menber
-            メンバー名
-      .main-header__right-header  
-        .main-header__right-header__button
-          edit
-          
-
-    .messages
-      .messages__message
-        .messages__message__upper-message
-          %h1.messages__message__upper-message_user-name
-            メンバー名
-          %p.messages__message__upper-message_user-date
-            1/1
-        .messages__message__lower-message 
-          .messages__message__lower-message__sentennce
-            文章 
-        .messages__message__upper-message
-          %h1.messages__message__upper-message_user-name
-            メンバー名
-          %p.messages__message__upper-message_user-date
-            1/1
-        .messages__message__lower-message 
-          .messages__message__lower-message__sentennce
-            文章 
+  .messages
+    .messages__message
+      .messages__message__upper-message
+        %h1.messages__message__upper-message_user-name
+          メンバー名
+        %p.messages__message__upper-message_user-date
+          1/1
+      .messages__message__lower-message 
+        .messages__message__lower-message__sentennce
+          文章 
+      .messages__message__upper-message
+        %h1.messages__message__upper-message_user-name
+          メンバー名
+        %p.messages__message__upper-message_user-date
+          1/1
+      .messages__message__lower-message 
+        .messages__message__lower-message__sentennce
+          文章 
 
 
-      
-    .form
-      .form__box
-        .form__box__message
-          メッセージ
-        .form__box__submit
-          = link_to '#' do
-            = icon('fas','fan',class: 'submit')
-        .form__box__button
-          SEND
-          
-      
-     
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
     
-          
-      
+  .form
+    .form__box
+      .form__box__message
+        メッセージ
+      .form__box__submit
+        = link_to '#' do
+          = icon('fas','fan',class: 'submit')
+      .form__box__button
+        SEND
+        
