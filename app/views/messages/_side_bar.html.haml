@@ -2,13 +2,15 @@
   .header
     %div.header__box
       %ul.box__user-name
+        = current_user.name
         neko
-      %ul.box__menu-list  
+      %ul.box__menu-list
+         
         %li.menu-list__new-group 
           = link_to '#' do
             = icon('fa', 'edit',class: 'new-group ')
         %li.menu-list__edit-group
-          = link_to '#' do
+          = link_to edit_user_path(current_user) do
             = icon('fa', 'cog',class: 'edit-group')
 
   .groups
