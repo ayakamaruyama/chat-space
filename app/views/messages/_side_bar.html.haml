@@ -5,15 +5,32 @@
         = current_user.name
       %ul.box__menu-list
         %li.menu-list__new-group 
-          = link_to '#' do
+          = link_to new_group_path do
             = icon('fa', 'edit')
         %li.menu-list__edit-group
           = link_to edit_user_path(current_user) do
             = icon('fa', 'cog')
+  -# .groups
+  -#   .group
+  -#     .group__name
+  -#       グループ名
+  -#     .group__message
+  -#       新着メッセージ
   .groups
-    .group
-      .group__name
-        グループ名
-      .group__message
-        新着メッセージ
-   
+    - current_user.groups.each do |group|
+      = link_to '#' do
+        .group
+          .group__name
+            = group.name
+          .group__message
+            新着メッセージ
+
+-# = link_to new_group_path do
+
+-# - current_user.groups.each do |group|
+-#       .group
+-#         = link_to '#' do
+-#           .group__name
+-#             = group.name
+-#           .group__message
+-#             メッセージはまだありません。
