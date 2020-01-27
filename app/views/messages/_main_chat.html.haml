@@ -2,15 +2,18 @@
   .main-header
     .main-header__left-header
       .main-header__left-header__title
-        グループタイトル名
+        動物グループ
       .main-header__left-header__member
       %ul.left-header__members
-        %li.menber
-          メンバー名
+        %li.member
+          猫 犬
     .main-header__right-header  
       .main-header__right-header__button
-        edit
+        = link_to edit_group_path(@group) do
+          = icon('fas','fan',class: 'main-header__right-header__button')
+          edit
   .messages
+    = render @messages
     .messages__message
       .messages__message__upper-message
         %h1.messages__message__upper-message_user-name
@@ -29,12 +32,13 @@
         .messages__message__lower-message__sentennce
           文章 
   .form
-    .form__box
-      .form__box__message
-        メッセージ
-      .form__box__submit
-        = link_to '#' do
-          = icon('fas','fan',class: 'submit')
-      .form__box__button
-        SEND
+    = form_for [@group, @message] do |f|
+      .form__box
+        .form__box__message
+          メッセージ
+        .form__box__submit
+          = link_to '#' do
+            = icon('fas','fan',class: 'submit')
+        .form__box__button
+          SEND
         
