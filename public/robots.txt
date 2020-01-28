@@ -1,5 +1,12 @@
-# See http://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
-#
-# To ban all spiders from the entire site uncomment the next two lines:
-# User-agent: *
-# Disallow: /
+
+
+FactoryBot.define do
+  factory :message do
+    content {Faker::Lorem.sentence}
+    image {File.open("#{Rails.root}/public/images/test_image.jpg")}
+    user
+    group
+  end
+end
+
+image {File.open("#{Rails.root}/public/images/test_image.jpg")}
