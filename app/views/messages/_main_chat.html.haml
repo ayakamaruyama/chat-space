@@ -1,44 +1,29 @@
 .main-chat
   .main-header
-    .main-header__left-header
-      .main-header__left-header__title
-        動物グループ
+    
+    .main-header__left-header__title
+      =@group.name
       .main-header__left-header__member
-      %ul.left-header__members
-        %li.member
-          猫 犬
+        %ul.left-header__members
+          %li.member
+            - @group.users.each do |user|
+              =user.name
     .main-header__right-header  
       .main-header__right-header__button
         = link_to edit_group_path(@group) do
-          = icon('fas','fan',class: 'main-header__right-header__button')
+          -# = icon('fas','fan',class: 'main-header__right-header__button')
           edit
   .messages
     = render @messages
-    .messages__message
-      .messages__message__upper-message
-        %h1.messages__message__upper-message_user-name
-          メンバー名
-        %p.messages__message__upper-message_user-date
-          1/1
-      .messages__message__lower-message 
-        .messages__message__lower-message__sentennce
-          文章 
-      .messages__message__upper-message
-        %h1.messages__message__upper-message_user-name
-          メンバー名
-        %p.messages__message__upper-message_user-date
-          1/1
-      .messages__message__lower-message 
-        .messages__message__lower-message__sentennce
-          文章 
+    
   .form
     = form_for [@group, @message] do |f|
       .form__box
-        .form__box__message
-          メッセージ
-        .form__box__submit
-          = link_to '#' do
-            = icon('fas','fan',class: 'submit')
-        .form__box__button
-          SEND
-        
+        = f.text_field :content, class: 'form__box__message', placeholder: 'type a message'
+        = f.label :image, class: 'form__box__submit' do
+          = icon('fas','image')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'SEND', class: 'form__box__button'
+
+
+
