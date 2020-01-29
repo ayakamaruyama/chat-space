@@ -1,15 +1,15 @@
 .messages__message
   .messages__message__upper-message
-    %h1.messages__message__upper-message_user-name
+    .messages__message__upper-message__user-name
       = message.user.name
-    %p.messages__message__upper-message_user-date
+    .messages__message__upper-message__user-date
       = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
   -# .messages__message__lower-message 
   -#   .messages__message__lower-message__sentennce
   -#     = message.created_at
   .messages__message__lower-message 
     - if message.content.present?
-      %p.lower-message__content
+      .lower-message__content
         = message.content
     = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
     -# .messages__message__lower-message__sentennce

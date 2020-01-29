@@ -22,6 +22,7 @@
       
       .box__user-name{
         display: inline-block;
+        text-decoration: none;
           font-size: 16px;
           font-weight: bold;
           color: white ;
@@ -29,6 +30,7 @@
     
       .box__menu-list{
         display: inline-block;
+        text-decoration: none;
         display: flex;
         justify-content: space-between;
 
@@ -59,6 +61,7 @@
         font-size: 11px;
         margin-top: 5px;       
       }
+      a {text-decoration: none;}
     }
   }
 }

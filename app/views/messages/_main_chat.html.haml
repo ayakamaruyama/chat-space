@@ -1,18 +1,18 @@
 .main-chat
   .main-header
-    
-    .main-header__left-header__title
-      =@group.name
-      .main-header__left-header__member
-        %ul.left-header__members
-          %li.member
-            - @group.users.each do |user|
-              =user.name
+    .main-header__left-header
+      .main-header__left-header__title
+        =@group.name
+        .main-header__left-header__member
+          %ul.left-header__members
+            %li.member
+              - @group.users.each do |user|
+                =user.name
     .main-header__right-header  
       .main-header__right-header__button
         = link_to edit_group_path(@group) do
           -# = icon('fas','fan',class: 'main-header__right-header__button')
-          edit
+          Edit
   .messages
     = render @messages
     
