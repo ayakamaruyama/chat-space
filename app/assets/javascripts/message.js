@@ -60,18 +60,19 @@ $(function(){
         $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight}); 
         $('form')[0].reset();
         $('.box').animate({'height' : '200px'});
-        $('form__box__button').prop('disabled', true);
       })
-
       .fail(function() {
         alert("メッセージ送信に失敗しました");
       })
-
+      .always(function(){
+        $('.form__box__button').prop('disabled', false);
+      });
   });
 
   var reloadMessages = function() {
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     last_message_id = $('.message:last').data("message-id");
+    console.log(last_message_id);
     $.ajax({
       //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
       url: "api/messages",
@@ -92,15 +93,14 @@ $(function(){
       //メッセージが入ったHTMLに、入れ物ごと追加
       $('.messages').append(insertHTML);
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
-      console.log('success');
+      
+     }
     })
     .fail(function() {
-      console.log('error');
+      alert('error');
     });
+  
   };
   setInterval(reloadMessages, 7000);
-  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
-    setInterval(reloadMessages, 7000);
-  }
+  
 });
-
