@@ -2,40 +2,44 @@ $(function(){
   function buildHTML(message){
    if ( message.image ) {
      var html =
-      `<div class="messages__message" data-message-id=${message.id}>
-         <div class="messages__message__upper-message">
-           <div class="messages__message__upper-message__user-name">
-             ${message.user_name}
-           </div>
-           <div class="messages__message__upper-message__user-date">
-             ${message.created_at}
-           </div>
-         </div>
-         <div class="lmessages__message__lower-message">
-           <p class="lower-message__sentence">
-             ${message.sentence}
-           </p>
-         </div>
-         <img src=${message.image} >
-       </div>`
+    `<div class="message" data-message-id=${message.id}>
+      <div class="messages__message">
+      <div class="messages__message__upper-message">
+        <div class="messages__message__upper-message__user-name">
+        ${message.user_name}
+        </div>
+        <div class="messages__message__upper-message__user-date">
+        ${message.created_at}
+        </div>
+      </div>
+      <div class="messages__message__lower-message">
+        <div class="lower-message__sentence">
+        ${message.sentence}
+        </div>
+      <img src=${message.image} >
+      </div>
+      </div>
+    </div>`
      return html;
    } else {
      var html =
-      `<div class="messages__message" data-message-id=${message.id}>
-         <div class="messages__message__upper-messagee">
-           <div class="messages__message__upper-message__user-name">
-             ${message.user_name}
-           </div>
-           <div class="messages__message__upper-message__user-date">
-             ${message.created_at}
-           </div>
-         </div>
-         <div class="messages__message__lower-message">
-           <p class="lower-message__sentence">
-             ${message.sentence}
-           </p>
-         </div>
-       </div>`
+     `<div class="message" data-message-id=${message.id}>
+        <div class="messages__message">
+        <div class="messages__message__upper-message">
+          <div class="messages__message__upper-message__user-name">
+          ${message.user_name}
+          </div>
+          <div class="messages__message__upper-message__user-date">
+          ${message.created_at}
+          </div>
+        </div>
+        <div class="messages__message__lower-message">
+          <div class="lower-message__sentence">
+          ${message.sentence}
+          </div>
+        </div>
+        </div>
+      </div>`
      return html;
    };
  }
@@ -103,3 +107,41 @@ $(function(){
     setInterval(reloadMessages, 7000);
   }
 });
+
+
+
+{/* <div class="message" data-message-id="36">
+<div class="messages__message">
+<div class="messages__message__upper-message">
+<div class="messages__message__upper-message__user-name">
+cat
+</div>
+<div class="messages__message__upper-message__user-date">
+2020年02月03日 13時07分
+</div>
+</div>
+<div class="messages__message__lower-message">
+<div class="lower-message__sentence">
+tets
+</div>
+
+</div>
+</div>
+</div> */}
+
+// `<div class="message" data-message-id=${message.id}>
+//   <div class="messages__message">
+//     <div class="messages__message__upper-messagee">
+//       <div class="messages__message__upper-message__user-name">
+//         ${message.user_name}
+//       </div>
+//       <div class="messages__message__upper-message__user-date">
+//         ${message.created_at}
+//       </div>
+//     </div>
+//     <div class="messages__message__lower-message">
+//       <p class="lower-message__sentence">
+//         ${message.sentence}
+//       </p>
+//     </div>
+//   </div>`
